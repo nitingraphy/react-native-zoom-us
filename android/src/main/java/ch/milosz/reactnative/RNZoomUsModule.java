@@ -329,6 +329,7 @@ public class RNZoomUsModule extends ReactContextBaseJavaModule implements ZoomSD
           if (joinMeetingResult != MeetingError.MEETING_ERROR_SUCCESS) {
             meetingPromise.reject("ERR_ZOOM_JOIN", "joinMeeting, errorCode=" + joinMeetingResult);
           }
+           registerListener();
         } catch (Exception ex) {
           meetingPromise.reject("ERR_UNEXPECTED_EXCEPTION", ex);
         }
@@ -733,7 +734,7 @@ public class RNZoomUsModule extends ReactContextBaseJavaModule implements ZoomSD
               "Error: " + errorCode + ", internalErrorCode=" + internalErrorCode
       );
     } else {
-      registerListener();
+//       registerListener();
       initializePromise.resolve("Initialize Zoom SDK successfully.");
 
       final MeetingSettingsHelper meetingSettingsHelper = ZoomSDK.getInstance().getMeetingSettingsHelper();
