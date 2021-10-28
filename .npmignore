@@ -1,4 +1,3 @@
-**/*.ts
 **/*.tsx
 !**/*.d.ts
 scripts
